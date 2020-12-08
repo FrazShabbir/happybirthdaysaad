@@ -74,6 +74,29 @@
         <div class="space"></div>
     </div>
 
+    <div id="card" style="width: 100%;	margin-top:100px ;">
+        <div id="card-inside">
+            <div class="wrap">
+                <p>Hey Saad,</p>
+                <p>May all the joy you have spread around come back to you a hundredfold. Happy birthday.</p>
+                <p>Do not count the candles, but see the light they give. Don't count your years but the life you live. Happy Birthday..</p>
+                <p>Happy birthday! Remember that the best is yet to come.
+                </p>
+                <p>always.</p>
+                <p class="signed">FRAZ SHABBIR</p>
+
+            </div>
+        </div>
+
+        <div id="card-front">
+            <div class="wrap">
+                <h1>Happy Birthday!</h1>
+            </div>
+            <button id="open">&gt;</button>
+            <button id="close">&lt;</button>
+        </div>
+    </div>
+
 
     <div class="container-fluid">
         <div class="row">
@@ -448,6 +471,41 @@
 
         // once the window loads, we are ready for some fireworks!
         window.onload = loop;
+
+
+
+
+
+
+        (function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            var card = $('card'),
+                openB = $('open'),
+                closeB = $('close'),
+                timer = null;
+            console.log('wat', card);
+            openB.addEventListener('click', function() {
+                card.setAttribute('class', 'open-half');
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(function() {
+                    card.setAttribute('class', 'open-fully');
+                    timer = null;
+                }, 1000);
+            });
+
+            closeB.addEventListener('click', function() {
+                card.setAttribute('class', 'close-half');
+                if (timer) clearTimerout(timer);
+                timer = setTimeout(function() {
+                    card.setAttribute('class', '');
+                    timer = null;
+                }, 1000);
+            });
+
+        }());
     </script>
 
 </body>
