@@ -64,3 +64,9 @@ img.birthday {
 .space {
     height: 100px;
 }
+
+canvas {
+    cursor: crosshair;
+    display: block;
+    width: 100%;
+}
